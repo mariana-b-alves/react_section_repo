@@ -1,18 +1,47 @@
 export default function Product(props) {
   
-  const {id, title, url, description, votes, productImageUrl, submitterAvatarUrl} = props;
+  const {
+    id, 
+    title, 
+    url, 
+    description, 
+    votes, 
+    productImageUrl, 
+    submitterAvatarUrl, 
+    changeVote,
+  } = props;
+
+  const handleVote = (evt) => {
+    //console.log(evt.target.classList.contains('up'));
+
+    let upVote = evt.target.classList.contains('up')
+
+   /*  if (upVote){ 
+      changeVote(id, 1)
+    } else {
+      changeVote(id, -1)
+    } */
+
+      upVote ? changeVote(id, 1) : changeVote(id, - 1);
+   // changeVote(id)
+  }
   
     return (
     <section className="item">
-
       <article className="image">
         <img src={productImageUrl} alt={title} />
       </article>
 
       <article className="middle aligned content">
         <div className="header">
-            <a><i className="large caret up icon"></i></a>
+            <a onClick={handleVote}>
+              <i className="large caret up icon"></i>
+              </a>
             {votes}
+
+            <a onClick={handleVote}>
+              <i className="large caret down icon"></i>
+              </a>
         </div>
         
         <header className="description">
