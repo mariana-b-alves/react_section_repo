@@ -1,6 +1,8 @@
 import './App.css'
 import SayHello from '../components/SayHello'
 import WindowSize from '../components/WindowSize'
+import UsingLocalStorage from '../components/UsingLocalStorage'
+import UserList from '../components/UserList'
 
 function App() {
   return (
@@ -10,6 +12,10 @@ function App() {
       <SayHello />
       <hr />
       <WindowSize />
+      <hr />
+      <UsingLocalStorage />
+      <hr />
+      <UserList />
     </>
   )
 }
